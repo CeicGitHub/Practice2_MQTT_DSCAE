@@ -80,6 +80,8 @@ void BOARD_InitPins(void)
     CLOCK_EnableClock(kCLOCK_PortB);
     /* Port C Clock Gate Control: Clock enabled */
     CLOCK_EnableClock(kCLOCK_PortC);
+    /* Port E Clock Gate Control: Clock enabled */
+    CLOCK_EnableClock(kCLOCK_PortE);
 
     /* PORTA12 (pin 42) is configured as RMII0_RXD1 */
     PORT_SetPinMux(PORTA, 12U, kPORT_MuxAlt4);
@@ -147,6 +149,12 @@ void BOARD_InitPins(void)
 
     /* PORTB22 (pin 68) is configured as PTB22 */
     PORT_SetPinMux(PORTB, 22U, kPORT_MuxAsGpio);
+
+    /* PORTB21 (pin 67) is configured as PTB21 */
+    PORT_SetPinMux(PORTB, 21U, kPORT_MuxAsGpio);
+
+    /* PORTE26 (pin ) is configured as PTE26 */
+    PORT_SetPinMux(PORTE, 26U, kPORT_MuxAsGpio);
 
     /* PORTC16 (pin 90) is configured as ENET0_1588_TMR0 */
     PORT_SetPinMux(PORTC, 16U, kPORT_MuxAlt4);

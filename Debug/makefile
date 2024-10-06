@@ -44,7 +44,7 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Practice2_752964_lwip_mqtt_freertos
+BUILD_ARTIFACT_NAME := Practice2_752964_Mqtt
 BUILD_ARTIFACT_EXTENSION := axf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
@@ -56,24 +56,24 @@ all:
 	+@$(MAKE) --no-print-directory main-build && $(MAKE) --no-print-directory post-build
 
 # Main-build Target
-main-build: Practice2_752964_lwip_mqtt_freertos.axf
+main-build: Practice2_752964_Mqtt.axf
 
 # Tool invocations
-Practice2_752964_lwip_mqtt_freertos.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+Practice2_752964_Mqtt.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -Xlinker -Map="Practice2_752964_lwip_mqtt_freertos.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T Practice2_752964_lwip_mqtt_freertos_Debug.ld -o "Practice2_752964_lwip_mqtt_freertos.axf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -nostdlib -Xlinker -Map="Practice2_752964_Mqtt.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T Practice2_752964_Mqtt_Debug.ld -o "Practice2_752964_Mqtt.axf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Practice2_752964_lwip_mqtt_freertos.axf
+	-$(RM) Practice2_752964_Mqtt.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "Practice2_752964_lwip_mqtt_freertos.axf"; # arm-none-eabi-objcopy -v -O binary "Practice2_752964_lwip_mqtt_freertos.axf" "Practice2_752964_lwip_mqtt_freertos.bin" ; # checksum -p MK64FN1M0xxx12 -d "Practice2_752964_lwip_mqtt_freertos.bin";
+	-arm-none-eabi-size "Practice2_752964_Mqtt.axf"; # arm-none-eabi-objcopy -v -O binary "Practice2_752964_Mqtt.axf" "Practice2_752964_Mqtt.bin" ; # checksum -p MK64FN1M0xxx12 -d "Practice2_752964_Mqtt.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents main-build post-build

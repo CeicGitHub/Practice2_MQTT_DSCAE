@@ -5,11 +5,11 @@
  * Generated linker script file for MK64FN1M0xxx12
  * Created from linkscript.ldt by FMCreateLinkLibraries
  * Using Freemarker v2.3.30
- * MCUXpresso IDE v11.10.0 [Build 3148] [2024-07-03] on Oct 3, 2024, 10:28:21 AM
+ * MCUXpresso IDE v11.10.0 [Build 3148] [2024-07-03] on Oct 6, 2024, 5:26:08 PM
  */
 
-INCLUDE "Practice2_752964_lwip_mqtt_freertos_Debug_library.ld"
-INCLUDE "Practice2_752964_lwip_mqtt_freertos_Debug_memory.ld"
+INCLUDE "frdmk64f_lwip_mqtt_freertos_practica_24_Debug_library.ld"
+INCLUDE "frdmk64f_lwip_mqtt_freertos_practica_24_Debug_memory.ld"
 
 ENTRY(ResetISR)
 
